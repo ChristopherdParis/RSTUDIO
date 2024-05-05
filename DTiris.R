@@ -1,0 +1,12 @@
+install.packages("data.table")
+library(data.table)
+class(iris)
+iris
+DTiris<-as.data.table(iris)
+class(iris)
+DTiris[,.(Sepal.Length.media=mean(Sepal.Length))]
+DTiris[,.(Sepal.Length.media=mean(Sepal.Length),
+          Sepal.Width.media=mean(Sepal.Width),
+          Sepal.Length.media=mean(Petal.Length),
+          Sepal.Width.media=mean(Petal.Width),
+          by=Species)]
